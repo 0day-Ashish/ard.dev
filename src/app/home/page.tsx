@@ -10,10 +10,7 @@ import DecryptedText from '../components/DecryptedText';
 import ScrambledText from '../components/ScrambledText';
 import { ExpandableCardDemo } from '../components/SkillsShow';
 import { Timeline } from '../components/Skills';
-
-
-
-
+import ShinyText from '../components/ShinyText';
 
 export default function HomePage() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -26,7 +23,7 @@ export default function HomePage() {
       content: (
         <div>
           <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Built and launched Aceternity UI and Aceternity UI Pro from scratch
+            Built & Explored Events, Hackathons, Projects on blockchain globally and brought in sponsors like Harley , BMW etc., This year gave me a lot to learn and grow.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <img
@@ -44,7 +41,7 @@ export default function HomePage() {
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
             <img
-              src="/canop.png"
+              src="firstcontract.png"
               alt="startup template"
               width={500}
               height={500}
@@ -76,42 +73,40 @@ export default function HomePage() {
       ),
     },
     {
-      title: "End 2024",
+      title: "2024",
       content: (
         <div>
           <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            I usually run out of copy, but when I see content this big, I try to
-            integrate lorem ipsum.
+            First Year of college. 
           </p>
           <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Lorem ipsum is for people who are too lazy to write copy. But we are
-            not. Here are some more example of beautiful designs I built.
+            I've been working freelance since two years and here are some of the projects I worked on.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="https://assets.aceternity.com/pro/hero-sections.png"
-              alt="hero template"
+              src="canop.png"
+              alt="eventabc"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
             <img
-              src="https://assets.aceternity.com/features-section.png"
-              alt="feature template"
+              src="bet0verse.png"
+              alt="monad_project"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
             <img
-              src="https://assets.aceternity.com/pro/bento-grids.png"
+              src="blocktix.png"
               alt="bento template"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
             <img
-              src="https://assets.aceternity.com/cards.png"
-              alt="cards template"
+              src="fitmonk.png"
+              alt="coredao"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
@@ -121,53 +116,50 @@ export default function HomePage() {
       ),
     },
     {
-      title: "Changelog",
+      title: "Peak Era ",
       content: (
         <div>
           <p className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Deployed 5 new components on Aceternity today
+            4 coding tips i'd kill to tell my 17 y/o self :  
           </p>
           <div className="mb-8">
             <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-              ✅ Card grid component
+              • Coding is very hard at first 
             </div>
             <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-              ✅ Startup template Aceternity
+              • Interviews are harder than job
             </div>
             <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-              ✅ Random file upload lol
+              • Do EVERYTHING to land an internship
             </div>
             <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-              ✅ Himesh Reshammiya Music CD
-            </div>
-            <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-              ✅ Salman Bhai Fan Club registrations open
+              • Build endless shits ! 
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="https://assets.aceternity.com/pro/hero-sections.png"
+              src="port.png"
               alt="hero template"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
             <img
-              src="https://assets.aceternity.com/features-section.png"
+              src="random.png"
               alt="feature template"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
             <img
-              src="https://assets.aceternity.com/pro/bento-grids.png"
+              src="image.png"
               alt="bento template"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
             <img
-              src="https://assets.aceternity.com/cards.png"
+              src="random2.png"
               alt="cards template"
               width={500}
               height={500}
@@ -299,17 +291,48 @@ export default function HomePage() {
         </div>
         <div className="flex flex-row items-center justify-center gap-8 w-full flex-1">
           <div className="w-full md:w-1/2 flex justify-start pl-8 md:pl-16 text-2xl" style={{ marginTop: '4rem' }}>
-            
-<ScrambledText
-  className="scrambled-text-demo"
-  radius={100}
-  duration={1.2}
-  speed={0.5}
-  scrambleChars="{}:."
->
-     19 y/o Full-stack Dev passionate about design, AI/ML and Web3 — turning ideas into      interactive,intelligent and decentralized <span style={{ display: 'block' }}>experiences.</span>
-</ScrambledText>
-
+            <div className="flex flex-col gap-4">
+              <ScrambledText
+                className="scrambled-text-demo"
+                radius={100}
+                duration={1.2}
+                speed={0.5}
+                scrambleChars="{}:."
+              >
+                19 y/o Full-stack Dev passionate about design, AI/ML and Web3 — turning ideas into interactive,intelligent and decentralized <span style={{ display: 'block' }}>experiences.</span>
+              </ScrambledText>
+              {/* Social Links */}
+            <div className="flex flex-row gap-6 mt-6">
+              <div className="flex flex-row gap-6 mt-6" style={{ marginLeft: '4.5rem' }}/>
+              <a href="https://github.com/0day-Ashish" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:scale-110 transition-transform">
+                {/* GitHub SVG */}
+                <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-green-400">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.339-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.987 1.029-2.687-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.594 1.028 2.687 0 3.847-2.338 4.695-4.566 4.944.36.31.68.921.68 1.857 0 1.34-.012 2.422-.012 2.753 0 .268.18.579.688.481C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2z" />
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/ashish-ranjan-das%E2%86%97-530512198/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:scale-110 transition-transform">
+                {/* LinkedIn SVG */}
+                <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-blue-400">
+                  <rect x="2" y="2" width="20" height="20" rx="5" strokeWidth="2"/>
+                  <path strokeWidth="2" d="M7 10v7M7 7v.01M12 10v7m0-7c0-1.105.895-2 2-2s2 .895 2 2v7"/>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/ashishh_rd_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:scale-110 transition-transform">
+                {/* Instagram SVG */}
+                <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-pink-400">
+                  <rect width="20" height="20" x="2" y="2" rx="5" strokeWidth="2"/>
+                  <circle cx="12" cy="12" r="5" strokeWidth="2"/>
+                  <circle cx="17" cy="7" r="1.5" fill="currentColor"/>
+                </svg>
+              </a>
+              <a href="https://x.com/Ashishrd06" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:scale-110 transition-transform">
+                {/* Twitter SVG */}
+                <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-blue-300">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M22 5.924c-.793.352-1.645.59-2.54.698a4.48 4.48 0 001.965-2.475 8.94 8.94 0 01-2.828 1.082A4.48 4.48 0 0012.07 4c-2.485 0-4.5 2.015-4.5 4.5 0 .353.04.697.116 1.027C5.09 9.37 3.13 8.29 1.671 6.684c-.387.664-.61 1.437-.61 2.26 0 1.56.794 2.936 2.003 3.744-.737-.023-1.43-.226-2.037-.563v.057c0 2.18 1.55 4.002 3.604 4.418-.377.103-.775.158-1.186.158-.29 0-.57-.028-.844-.08.57 1.78 2.223 3.078 4.183 3.113A8.98 8.98 0 012 19.54a12.68 12.68 0 006.88 2.017c8.253 0 12.77-6.835 12.77-12.77 0-.195-.004-.39-.013-.583A9.14 9.14 0 0024 4.59a8.98 8.98 0 01-2.6.713z" />
+                </svg>
+              </a>
+            </div>
+            </div>
           </div>
           <div className="w-full md:w-1/2 flex justify-end items-center pr-8 md:pr-16">
             <DecayCard width={400} height={500} image="/me.png"/>
@@ -331,9 +354,40 @@ export default function HomePage() {
             <p className="text-2xl md:text-2xl font-bold text-white tracking-widest text-center ">SKILLS & EXPERIENCE</p>
           </Magnet>
         </div>
-        {/* Add your skills content here */}
          <div className="relative w-full overflow-clip">
       <Timeline data={data} />
+      <div className="flex items-center gap-4 pl-16 md:pl-32">
+        <ShinyText text="Tech Stack : " disabled={false} speed={3} className='custom-class text-4xl font-bold' />
+        <div className="flex flex-row gap-6 ml-2">
+          <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" aria-label="React">
+            <img src="/react.svg" alt="React" className="w-10 h-10 object-contain hover:scale-110 transition-transform" />
+          </a>
+          <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer" aria-label="Node.js">
+            <img src="/nodejs.svg" alt="Node.js" className="w-12 h-12 object-contain hover:scale-110 transition-transform" />
+          </a>
+          <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer" aria-label="TypeScript">
+            <img src="/ts.svg" alt="TypeScript" className="w-10 h-10 object-contain hover:scale-110 transition-transform" />
+          </a>
+          <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" aria-label="Tailwind CSS">
+            <img src="/css.svg" alt="Tailwind CSS" className="w-10 h-10 object-contain hover:scale-110 transition-transform" />
+          </a>
+          <a href="https://docs.soliditylang.org/" target="_blank" rel="noopener noreferrer" aria-label="Solidity">
+            <img src="/sol.svg" alt="Solidity" className="w-10 h-10 object-contain hover:scale-110 transition-transform" />
+          </a>
+          <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" aria-label="Python">
+            <img src="/py.svg" alt="Python" className="w-12 h-12 object-contain hover:scale-110 transition-transform" />
+          </a>
+          <a href="https://en.wikipedia.org/wiki/Terminal_emulator" target="_blank" rel="noopener noreferrer" aria-label="Terminal">
+            <img src="/terminal.svg" alt="Terminal" className="w-12 h-12 object-contain hover:scale-110 transition-transform" />
+          </a>
+          <a href="https://developer.mozilla.org/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" aria-label="JavaScript">
+            <img src="/js.svg" alt="JavaScript" className="w-12 h-12 object-contain hover:scale-110 transition-transform" />
+          </a>
+          <a href="https://en.wikipedia.org/wiki/Database" target="_blank" rel="noopener noreferrer" aria-label="Database">
+            <img src="/database.svg" alt="Database" className="w-12 h-12 object-contain hover:scale-110 transition-transform" />
+          </a>
+        </div>
+      </div>
     </div>
       </section>
       <div className="w-11/12 md:w-5/6 h-[1px] bg-white my-0 mx-auto rounded-full" />
@@ -425,6 +479,31 @@ export default function HomePage() {
         <div className="max-w-2xl w-full flex flex-col items-center">
           <span className="mb-1">&copy; {new Date().getFullYear()} Ashish Ranjan Das. All rights reserved.</span>
           <span className="text-[0.7rem]">Made with <span className="text-green-400">Next.js</span> & <span className="text-green-400">Tailwind CSS</span></span>
+          <div className="flex flex-row gap-6 mt-4 justify-center">
+            <a href="https://github.com/0day-Ashish" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:scale-110 transition-transform">
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-green-400">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.339-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.987 1.029-2.687-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.594 1.028 2.687 0 3.847-2.338 4.695-4.566 4.944.36.31.68.921.68 1.857 0 1.34-.012 2.422-.012 2.753 0 .268.18.579.688.481C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2z" />
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/ashish-ranjan-das%E2%86%97-530512198/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:scale-110 transition-transform">
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-blue-400">
+                <rect x="2" y="2" width="20" height="20" rx="5" strokeWidth="2"/>
+                <path strokeWidth="2" d="M7 10v7M7 7v.01M12 10v7m0-7c0-1.105.895-2 2-2s2 .895 2 2v7"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/ashishh_rd_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:scale-110 transition-transform">
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-pink-400">
+                <rect width="20" height="20" x="2" y="2" rx="5" strokeWidth="2"/>
+                <circle cx="12" cy="12" r="5" strokeWidth="2"/>
+                <circle cx="17" cy="7" r="1.5" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="https://x.com/Ashishrd06" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:scale-110 transition-transform">
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-blue-300">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M22 5.924c-.793.352-1.645.59-2.54.698a4.48 4.48 0 001.965-2.475 8.94 8.94 0 01-2.828 1.082A4.48 4.48 0 0012.07 4c-2.485 0-4.5 2.015-4.5 4.5 0 .353.04.697.116 1.027C5.09 9.37 3.13 8.29 1.671 6.684c-.387.664-.61 1.437-.61 2.26 0 1.56.794 2.936 2.003 3.744-.737-.023-1.43-.226-2.037-.563v.057c0 2.18 1.55 4.002 3.604 4.418-.377.103-.775.158-1.186.158-.29 0-.57-.028-.844-.08.57 1.78 2.223 3.078 4.183 3.113A8.98 8.98 0 012 19.54a12.68 12.68 0 006.88 2.017c8.253 0 12.77-6.835 12.77-12.77 0-.195-.004-.39-.013-.583A9.14 9.14 0 0024 4.59a8.98 8.98 0 01-2.6.713z" />
+                </svg>
+            </a>
+          </div>
         </div>
       </footer>
     </main>
