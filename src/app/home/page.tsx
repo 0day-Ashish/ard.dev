@@ -360,31 +360,31 @@ export default function HomePage() {
         <ShinyText text="Tech Stack : " disabled={false} speed={3} className='custom-class text-4xl font-bold' />
         <div className="flex flex-row gap-6 ml-2">
           <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" aria-label="React">
-            <img src="/react.svg" alt="React" className="w-10 h-10 object-contain hover:scale-110 transition-transform" />
+            <img src="/react.svg" alt="React" className="w-10 h-10 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]" />
           </a>
           <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer" aria-label="Node.js">
-            <img src="/nodejs.svg" alt="Node.js" className="w-12 h-12 object-contain hover:scale-110 transition-transform" />
+            <img src="/nodejs.svg" alt="Node.js" className="w-12 h-12 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]" />
           </a>
           <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer" aria-label="TypeScript">
-            <img src="/ts.svg" alt="TypeScript" className="w-10 h-10 object-contain hover:scale-110 transition-transform" />
+            <img src="/ts.svg" alt="TypeScript" className="w-10 h-10 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]" />
           </a>
           <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" aria-label="Tailwind CSS">
-            <img src="/css.svg" alt="Tailwind CSS" className="w-10 h-10 object-contain hover:scale-110 transition-transform" />
+            <img src="/css.svg" alt="Tailwind CSS" className="w-10 h-10 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]" />
           </a>
           <a href="https://docs.soliditylang.org/" target="_blank" rel="noopener noreferrer" aria-label="Solidity">
-            <img src="/sol.svg" alt="Solidity" className="w-10 h-10 object-contain hover:scale-110 transition-transform" />
+            <img src="/sol.svg" alt="Solidity" className="w-10 h-10 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]" />
           </a>
           <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" aria-label="Python">
-            <img src="/py.svg" alt="Python" className="w-12 h-12 object-contain hover:scale-110 transition-transform" />
+            <img src="/py.svg" alt="Python" className="w-12 h-12 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]" />
           </a>
           <a href="https://en.wikipedia.org/wiki/Terminal_emulator" target="_blank" rel="noopener noreferrer" aria-label="Terminal">
-            <img src="/terminal.svg" alt="Terminal" className="w-12 h-12 object-contain hover:scale-110 transition-transform" />
+            <img src="/terminal.svg" alt="Terminal" className="w-12 h-12 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]" />
           </a>
           <a href="https://developer.mozilla.org/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" aria-label="JavaScript">
-            <img src="/js.svg" alt="JavaScript" className="w-12 h-12 object-contain hover:scale-110 transition-transform" />
+            <img src="/js.svg" alt="JavaScript" className="w-12 h-12 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]" />
           </a>
           <a href="https://en.wikipedia.org/wiki/Database" target="_blank" rel="noopener noreferrer" aria-label="Database">
-            <img src="/database.svg" alt="Database" className="w-12 h-12 object-contain hover:scale-110 transition-transform" />
+            <img src="/database.svg" alt="Database" className="w-12 h-12 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]" />
           </a>
         </div>
       </div>
