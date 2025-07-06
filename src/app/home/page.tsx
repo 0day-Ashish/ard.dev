@@ -329,11 +329,11 @@ export default function HomePage() {
               left: '-2.5rem', // push to left on mobile
             }}
             >
-              01//04 - SCROLL
+              01//05 - SCROLL
               <svg width="10" height="10" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="inline-block align-middle ml-1"><path d="M9 4V14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/><path d="M5 10L9 14L13 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </span>
             <span className="hidden sm:flex items-center gap-1 text-xs md:text-xs" style={{ position: 'relative', top: '0' }}>
-              01//04 - SCROLL
+              01//05 - SCROLL
               <svg width="13" height="13" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="inline-block align-middle ml-1"><path d="M9 4V14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/><path d="M5 10L9 14L13 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </span>
           </span>
@@ -486,7 +486,65 @@ export default function HomePage() {
             </Magnet>
           </div>
           <ExpandableCardDemo/>
-          <div className="mb-8" />
+           <div className="w-11/12 md:w-5/6 h-[1px] bg-white my-0 mx-auto rounded-full" />
+           <div className="mb-16" />
+           <Magnet padding={50} magnetStrength={50}>
+              <p className="text-2xl md:text-2xl font-bold text-white tracking-widest text-center ">CAPABILITIES</p>
+            </Magnet>
+          <div className="mb-8"/>
+          {/* Services Container with floating circles */}
+          <div
+            className="w-full sm:w-11/12 md:w-5/6 mx-auto border border-white rounded-2xl px-4 py-10 my-8 flex flex-col items-center justify-center min-h-[660px] relative overflow-hidden"
+            style={{ minHeight: '660px' }}
+          >
+            {/* Floating service circles */}
+            <div className="absolute inset-0 w-full h-full pointer-events-none">
+              {/* Centered text inside the container */}
+              <div className="absolute w-full flex items-center justify-center top-1/2 left-1/2" style={{ transform: 'translate(-50%, -50%)', zIndex: 10, pointerEvents: 'auto' }}>
+                <span className="flex flex-col items-center text-lg md:text-2xl font-bold text-white text-center  px-6 py-2 rounded-xl shadow-lg">
+                  <span>PROJECTS TYPES I</span>
+                  <span className="mt-1">SPECIALIZE IN</span>
+                </span>
+              </div>
+              {/* Arrange circles in a responsive grid, not overlapping */}
+              {/* Randomly placed, non-overlapping circles */}
+              {(() => {
+                // Predefined random positions for 11 circles (percentages for top/left)
+                const positions = [
+                  { top: '18%', left: '8%' }, // Service 1 moved down
+                  { top: '32%', left: '22%' }, // Service 2 moved down
+                  { top: '60%', left: '12%' },
+                  { top: '18%', left: '40%' },
+                  { top: '55%', left: '38%' },
+                  { top: '30%', left: '70%' },
+                  { top: '22%', left: '88%' }, // Service 7 moved down and right
+                  { top: '65%', left: '70%' }, // Service 8
+                  { top: '75%', left: '30%' }, // Service 9
+                  { top: '75%', left: '88%' }, // Service 10 moved even further right
+                  { top: '70%', left: '55%' },
+                ];
+                return positions.map((pos, i) => (
+                  <div
+                    key={i}
+                    className="absolute bg-white bg-opacity-10 border border-white rounded-full flex items-center justify-center text-white text-base font-semibold shadow-lg backdrop-blur-md transition-all duration-500 hover:bg-opacity-30 hover:scale-105 cursor-pointer"
+                    style={{
+                      width: 140,
+                      height: 140,
+                      minWidth: 140,
+                      minHeight: 140,
+                      pointerEvents: 'auto',
+                      top: pos.top,
+                      left: pos.left,
+                      transform: 'translate(-50%, -50%)',
+                      zIndex: 5,
+                    }}
+                  >
+                    {`Service ${i + 1}`}
+                  </div>
+                ));
+              })()}
+            </div>
+          </div>
           <ScrollVelocity
             texts={['VectorX', 'Incoming']} 
             velocity={velocity} 
@@ -494,6 +552,7 @@ export default function HomePage() {
           />
           <div className="pb-8" />
           <div className="w-full flex flex-col items-center justify-center py-10">
+
             <ShinyText text="Drop Your Reviews" disabled={false} speed={3} className='custom-class text-4xl font-bold justify-center' />
             <div className="mb-8" />
             <PlaceholdersAndVanishInput
