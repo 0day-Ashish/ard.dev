@@ -16,15 +16,23 @@ const DecayCard: React.FC<DecayCardProps> = ({
 }) => {
   const svgRef = useRef<HTMLDivElement | null>(null);
   const displacementMapRef = useRef<SVGFEDisplacementMapElement | null>(null);
-  const cursor = useRef<{ x: number; y: number }>({
-    x: window.innerWidth / 2,
-    y: window.innerHeight / 2,
-  });
-  const cachedCursor = useRef<{ x: number; y: number }>({ ...cursor.current });
-  const winsize = useRef<{ width: number; height: number }>({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
+  const cursor = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const cachedCursor = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const winsize = useRef<{ width: number; height: number }>({ width: 0, height: 0 });
+  useEffect(() => {
+    // Only set window-dependent values on client
+    if (typeof window !== 'undefined') {
+      cursor.current = {
+        x: window.innerWidth / 2,
+        y: window.innerHeight / 2,
+      };
+      cachedCursor.current = { ...cursor.current };
+      winsize.current = {
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+    }
+  }, []);
 
   useEffect(() => {
     const lerp = (a: number, b: number, n: number): number =>
