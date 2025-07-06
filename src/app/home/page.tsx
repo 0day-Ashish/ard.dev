@@ -494,39 +494,53 @@ export default function HomePage() {
           <div className="mb-8"/>
           {/* Services Container with floating circles */}
           <div
-            className="w-full sm:w-11/12 md:w-5/6 mx-auto border border-white rounded-2xl px-4 py-10 my-8 flex flex-col items-center justify-center min-h-[660px] relative overflow-hidden"
-            style={{ minHeight: '660px' }}
+            className="w-full sm:w-11/12 md:w-5/6 mx-auto border border-white rounded-[3rem] md:rounded-[4rem] lg:rounded-[5rem] px-4 py-10 my-8 flex flex-col items-center justify-center min-h-[660px] relative overflow-hidden shadow-2xl shadow-white/10"
+            style={{ minHeight: '660px', borderWidth: 2, borderColor: 'rgba(255,255,255,0.7)', boxShadow: '0 8px 48px 0 rgba(255,255,255,0.08)' }}
           >
             {/* Floating service circles */}
             <div className="absolute inset-0 w-full h-full pointer-events-none">
               {/* Centered text inside the container */}
               <div className="absolute w-full flex items-center justify-center top-1/2 left-1/2" style={{ transform: 'translate(-50%, -50%)', zIndex: 10, pointerEvents: 'auto' }}>
-                <span className="flex flex-col items-center text-lg md:text-2xl font-bold text-white text-center  px-6 py-2 rounded-xl shadow-lg">
-                  <span>PROJECTS TYPES I</span>
+                <span className="flex flex-col items-center text-lg md:text-2xl font-bold text-white text-center  px-6 py-2 rounded-xl shadow-lg tracking-widest">
+                  <span>PROJECT TYPES I</span>
                   <span className="mt-1">SPECIALIZE IN</span>
                 </span>
               </div>
               {/* Arrange circles in a responsive grid, not overlapping */}
               {/* Randomly placed, non-overlapping circles */}
               {(() => {
+                // List of service names
+                const serviceNames = [
+                  "Web Development",
+                  "UI/UX Design",
+                  "Auth Systems",
+                  "Landing Page",
+                  "Blockchain DApps",
+                  "API Integrations",
+                  "Content Strategy",
+                  "AI Automation",
+                  "ECommerce",
+                  "Product Design",
+                  "Consulting"
+                ];
                 // Predefined random positions for 11 circles (percentages for top/left)
                 const positions = [
                   { top: '18%', left: '8%' }, // Service 1 moved down
                   { top: '32%', left: '22%' }, // Service 2 moved down
                   { top: '60%', left: '12%' },
                   { top: '18%', left: '40%' },
-                  { top: '55%', left: '38%' },
+                  { top: '55%', left: '33%' },
                   { top: '30%', left: '70%' },
                   { top: '22%', left: '88%' }, // Service 7 moved down and right
                   { top: '65%', left: '70%' }, // Service 8
-                  { top: '75%', left: '30%' }, // Service 9
+                  { top: '80%', left: '22%' }, // Service 9 (ECommerce) pushed further down and left
                   { top: '75%', left: '88%' }, // Service 10 moved even further right
                   { top: '70%', left: '55%' },
                 ];
                 return positions.map((pos, i) => (
                   <div
                     key={i}
-                    className="absolute bg-white bg-opacity-10 border border-white rounded-full flex items-center justify-center text-white text-base font-semibold shadow-lg backdrop-blur-md transition-all duration-500 hover:bg-opacity-30 hover:scale-105 cursor-pointer"
+                    className="absolute bg-white bg-opacity-10 border border-white rounded-full flex items-center justify-center text-white text-base font-semibold shadow-lg backdrop-blur-md transition-all  duration-500 hover:bg-opacity-30 hover:scale-105 cursor-none text-center px-4 tracking-widest"
                     style={{
                       width: 140,
                       height: 140,
@@ -537,19 +551,26 @@ export default function HomePage() {
                       left: pos.left,
                       transform: 'translate(-50%, -50%)',
                       zIndex: 5,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      textAlign: 'center',
+                      padding: '0 12px',
                     }}
                   >
-                    {`Service ${i + 1}`}
+                    {serviceNames[i]}
                   </div>
                 ));
               })()}
             </div>
           </div>
+          <div className="mb-24" />
           <ScrollVelocity
             texts={['VectorX', 'Incoming']} 
             velocity={velocity} 
             className=" !leading-[1.2] tracking-widest"
           />
+          <div className="mb-10" />
           <div className="pb-8" />
           <div className="w-full flex flex-col items-center justify-center py-10">
 
