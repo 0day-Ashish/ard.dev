@@ -14,6 +14,7 @@ import ShinyText from '../components/ShinyText';
 import ScrollVelocity from '../components/ScrollVelocity';
 import { PlaceholdersAndVanishInput } from '../components/placeholder';
 
+
 export default function HomePage() {
   // Ref for mobile nav menu
   const navMenuRef = useRef<HTMLDivElement | null>(null);
@@ -329,11 +330,11 @@ export default function HomePage() {
               left: '-2.5rem', // push to left on mobile
             }}
             >
-              01//05 - SCROLL
+              01//04 - SCROLL
               <svg width="10" height="10" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="inline-block align-middle ml-1"><path d="M9 4V14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/><path d="M5 10L9 14L13 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </span>
             <span className="hidden sm:flex items-center gap-1 text-xs md:text-xs" style={{ position: 'relative', top: '0' }}>
-              01//05 - SCROLL
+              01//04 - SCROLL
               <svg width="13" height="13" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="inline-block align-middle ml-1"><path d="M9 4V14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/><path d="M5 10L9 14L13 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </span>
           </span>
@@ -431,7 +432,7 @@ export default function HomePage() {
     text="Tech Stack : "
     disabled={false}
     speed={3}
-    className="custom-class text-3xl sm:text-4xl md:text-4xl font-bold whitespace-nowrap"
+    className="custom-class text-3xl sm:text-4xl md:text-4xl font-bold whitespace-nowrap tracking-widest"
   />
 
   <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" aria-label="React">
