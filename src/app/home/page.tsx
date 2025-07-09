@@ -578,10 +578,8 @@ export default function HomePage() {
             <ShinyText text="Drop Your Reviews" disabled={false} speed={3} className='custom-class text-4xl font-bold justify-center' />
             <div className="mb-8" />
             <PlaceholdersAndVanishInput
-              placeholders={["Type your message...", "Say hello!", "Share your thoughts..."]}
-              onChange={() => {}}
-              onSubmit={() => {}}
-            />
+  placeholders={["Drop your thoughts here...", "Say something cool!", "What's on your mind?"]}
+/>
           </div>
         </section>
         {/* Navigation */}
