@@ -20,7 +20,7 @@ export default function ContactPage() {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("/api/send-review", {
+      const res = await fetch("https://arddev.vercel.app/api/send-review", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
