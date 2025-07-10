@@ -8,22 +8,22 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
-         shine: {
-           '0%': { 'background-position': '100%' },
-           '100%': { 'background-position': '-100%' },
-           sparkle: {
-          "0%, 100%": { opacity: "0.75", scale: "0.9" },
-          "50%": { opacity: "1", scale: "1" },
-         },
+        shine: {
+          '0%': { 'background-position': '100%' },
+          '100%': { 'background-position': '-100%' },
         },
-       },
-       animation: {
-         shine: 'shine 5s linear infinite',
-         sparkle: "sparkle 2s ease-in-out infinite",
-
-       },
-     },
-   },
+        sparkle: {
+          '0%, 100%': { opacity: '0.75', transform: 'scale(0.9)' },
+          '50%': { opacity: '1', transform: 'scale(1)' },
+        },
+      },
+      animation: {
+        shine: 'shine 5s linear infinite',
+        sparkle: 'sparkle 2s ease-in-out infinite',
+      },
+    },
+  },
+  
    plugins: [],
  }
 
