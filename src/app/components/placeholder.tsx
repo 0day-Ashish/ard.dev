@@ -155,7 +155,7 @@ export function PlaceholdersAndVanishInput({
     animate(maxX);
 
     try {
-      const res = await fetch("https://arddev.vercel.app/api/send-review", {
+      const res = await fetch("https://arddev.vercel.app/home/api/send-review", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
