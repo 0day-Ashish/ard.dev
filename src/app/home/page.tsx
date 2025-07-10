@@ -346,7 +346,7 @@ export default function HomePage() {
       <div className="w-11/12 md:w-5/6 h-[1px] bg-white my-0 mx-auto rounded-full" />
       <section id="about" className="about min-h-screen py-10 px-2 sm:px-4 md:px-8 flex flex-col">
         <div className="w-full flex justify-center items-center mb-12 mt-8 relative">
-          {/* Section number at the left */}
+          
           <div
             className="absolute flex flex-col items-start"
             style={{ top: '-1.5rem', left: '1.2rem' }}
@@ -360,9 +360,10 @@ export default function HomePage() {
             <p className="text-2xl md:text-2xl font-bold text-white tracking-widest text-center ">ABOUT</p>
           </Magnet>
         </div>
-        <div className="flex flex-row items-center justify-center gap-8 w-full flex-1">
-          <div className="w-full md:w-1/2 flex justify-start pl-8 md:pl-16 text-2xl" style={{ marginTop: '4rem' }}>
-            <div className="flex flex-col gap-4">
+        {/* Responsive flex: stack on mobile, row on md+ */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full flex-1">
+          <div className="w-full md:w-1/2 flex flex-col justify-center md:justify-start pl-0 md:pl-16 text-lg sm:text-xl md:text-2xl" style={{ marginTop: '2rem' }}>
+            <div className="flex flex-col gap-4 items-center md:items-start">
               <ScrambledText
                 className="scrambled-text-demo"
                 radius={100}
@@ -372,8 +373,8 @@ export default function HomePage() {
               >
                 19 y/o Full-stack Dev passionate about design, AI/ML and Web3 — turning ideas into interactive,intelligent and decentralized <span style={{ display: 'block' }}>experiences.</span>
               </ScrambledText>
-              {/* Social Links */}
-              <div className="flex flex-row gap-6 mt-6" style={{ marginLeft: '4.5rem' }}>
+              
+              <div className="hidden md:flex flex-row gap-6 mt-8 justify-start md:pl-12">
                 <a href="https://github.com/0day-Ashish" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:scale-110 transition-transform">
                   {/* GitHub SVG */}
                   <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-green-400">
@@ -398,25 +399,65 @@ export default function HomePage() {
                 <a href="https://x.com/Ashishrd06" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:scale-110 transition-transform">
                   {/* Twitter SVG */}
                   <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-blue-300">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M22 5.924c-.793.352-1.645.59-2.54.698a4.48 4.48 0 001.965-2.475 8.94 8.94 0 01-2.828 1.082A4.48 4.48 0 0012.07 4c-2.485 0-4.5 2.015-4.5 4.5 0 .353.04.697.116 1.027C5.09 9.37 3.13 8.29 1.671 6.684c-.387.664-.61 1.437-.61 2.26 0 1.56.794 2.936 2.003 3.744-.737-.023-1.43-.226-2.037-.563v.057c0 2.18 1.55 4.002 3.604 4.418-.377.103-.775.158-1.186.158-.29 0-.57-.028-.844-.08.57 1.78 2.223 3.078 4.183 3.113A8.98 8.98 0 012 19.54a12.68 12.68 0 006.88 2.017c8.253 0 12.77-6.835 12.77-12.77 0-.195-.004-.39-.013-.583A9.14 9.14 0 0024 4.59a8.98 8.98 0 01-2.6.713z" />
-
-                  </svg>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M22 5.924c-.793.352-1.645.59-2.54.698a4.48 4.48 0 001.965-2.475 8.94 8.94 0 01-2.828 1.082A4.48 4.48 0 0012.07 4c-2.485 0-4.5 2.015-4.5 4.5 0 .353.04.697.116 1.027C5.09 9.37 3.13 8.29 1.671 6.684c-.387.664-.61 1.437-.61 2.26 0 1.56.794 2.936 2.003 3.744-.737-.023-1.43-.226-2.037-.563v.057c0 2.18 1.55 4.002 3.604 4.418-.377.103-.775.158-1.186.158-.29 0-.57-.028-.844-.08.57 1.78 2.223 3.078 4.183 3.113A8.98 8.98 0 012 19.54a12.68 12.68 0 006.88 2.017c8.253 0 12.77-6.835 12.77-12.77 0-.195-.004-.39-.013-.583A9.14 9.14 0 0024 4.59a8.98 8.98 0 01-2.6.713z" />
+                </svg>
                 </a>
               </div>
+              {/* Add gap below social icons */}
+              <div className="hidden md:block mb-8" />
             </div>
           </div>
-          <div className="w-full md:w-1/2 flex justify-end items-center pr-8 md:pr-16">
-            <DecayCard width={400} height={500} image="/me.png"/>
+          {/* Image section */}
+          <div className="w-full md:w-1/2 flex flex-col items-center md:items-end justify-center pr-0 md:pr-16 mt-8 md:mt-0">
+            <DecayCard width={320} height={400} image="/me.png" className="hidden md:block" />
+            {/* Social Links below the image on mobile only */}
+            <div className="flex flex-row gap-6 mt-6 justify-center md:hidden">
+              <a href="https://github.com/0day-Ashish" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:scale-110 transition-transform">
+                {/* GitHub SVG */}
+                <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-green-400">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.339-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.987 1.029-2.687-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.594 1.028 2.687 0 3.847-2.338 4.695-4.566 4.944.36.31.68.921.68 1.857 0 1.34-.012 2.422-.012 2.753 0 .268.18.579.688.481C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2z" />
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/ashish-ranjan-das%E2%86%97-530512198/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:scale-110 transition-transform">
+                {/* LinkedIn SVG */}
+                <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-blue-400">
+                  <rect x="2" y="2" width="20" height="20" rx="5" strokeWidth="2"/>
+                  <path strokeWidth="2" d="M7 10v7M7 7v.01M12 10v7m0-7c0-1.105.895-2 2-2s2 .895 2 2v7"/>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/ashishh_rd_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:scale-110 transition-transform">
+                {/* Instagram SVG */}
+                <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-pink-400">
+                  <rect width="20" height="20" x="2" y="2" rx="5" strokeWidth="2"/>
+                  <circle cx="12" cy="12" r="5" strokeWidth="2"/>
+                  <circle cx="17" cy="7" r="1.5" fill="currentColor"/>
+                </svg>
+              </a>
+              <a href="https://x.com/Ashishrd06" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:scale-110 transition-transform">
+                {/* Twitter SVG */}
+                <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-blue-300">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M22 5.924c-.793.352-1.645.59-2.54.698a4.48 4.48 0 001.965-2.475 8.94 8.94 0 01-2.828 1.082A4.48 4.48 0 0012.07 4c-2.485 0-4.5 2.015-4.5 4.5 0 .353.04.697.116 1.027C5.09 9.37 3.13 8.29 1.671 6.684c-.387.664-.61 1.437-.61 2.26 0 1.56.794 2.936 2.003 3.744-.737-.023-1.43-.226-2.037-.563v.057c0 2.18 1.55 4.002 3.604 4.418-.377.103-.775.158-1.186.158-.29 0-.57-.028-.844-.08.57 1.78 2.223 3.078 4.183 3.113A8.98 8.98 0 012 19.54a12.68 12.68 0 006.88 2.017c8.253 0 12.77-6.835 12.77-12.77 0-.195-.004-.39-.013-.583A9.14 9.14 0 0024 4.59a8.98 8.98 0 01-2.6.713z" />
+                </svg>
+              </a>
+            </div>
+            {/* Add gap below social icons on mobile only */}
+            <div className="mb-8 md:hidden" />
           </div>
         </div>
         <div className="w-11/12 md:w-5/6 h-[1px] bg-white my-0 mx-auto rounded-full" />
-        </section>
+      </section>
         {/* Skills Section */}
         <section id="skills" className="skills min-h-screen py-10 px-2 sm:px-4 md:px-8 flex flex-col">
-          <div className="w-full flex justify-center items-center mb-12 mt-8 relative">
-            {/* Section number at the left */}
-            <div className="absolute left-0 flex flex-col items-start" style={{ top: '0', left: '6rem' }}>
-              <span className="mt-4 text-[0.7rem] md:text-xs tracking-widest flex items-center text-white">
+          <div className="w-full flex flex-col items-center mb-12 mt-8 relative">
+            <div
+              className="absolute left-0 flex flex-col items-start"
+              style={{
+                top: '-3rem', 
+                right: '2rem',
+                left: '1.2rem', 
+              }}
+            >
+              <span className="mt-4 text-[0.7rem] md:text-xs tracking-widest flex items-left justify-start text-white">
                 03
                 <svg width="13" height="13" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 4V14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/><path d="M5 10L9 14L13 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </span>
@@ -477,8 +518,19 @@ export default function HomePage() {
           {/* Section title */}
           <div className="w-full flex justify-center items-center mb-12 mt-8 relative">
             {/* Section number at the left */}
-            <div className="absolute left-0 flex flex-col items-start" style={{ top: '0', left: '6rem' }}>
-              <span className="mt-4 text-[0.7rem] md:text-xs tracking-widest flex items-center text-white">
+            <div
+              className="absolute left-0 flex flex-col items-start"
+              style={{
+                top: '0.3rem', // move a bit up on mobile
+                left: '2rem',
+              }}
+            >
+              <span className="mt-4 text-[0.7rem] md:text-xs tracking-widest flex items-center text-white sm:mt-4 sm:left-0 sm:top-0 sm:relative"
+                style={{
+                  // Only move up on mobile, not on sm and above
+                  marginTop: '0.2rem',
+                }}
+              >
                 04
               </span>
             </div>
@@ -493,22 +545,20 @@ export default function HomePage() {
               <p className="text-2xl md:text-2xl font-bold text-white tracking-widest text-center ">CAPABILITIES</p>
             </Magnet>
           <div className="mb-8"/>
-          {/* Services Container with floating circles */}
+          
           <div
             className="w-full sm:w-11/12 md:w-5/6 mx-auto border border-white rounded-[3rem] md:rounded-[4rem] lg:rounded-[5rem] px-4 py-10 my-8 flex flex-col items-center justify-center min-h-[660px] relative overflow-hidden shadow-2xl shadow-white/10"
             style={{ minHeight: '660px', borderWidth: 2, borderColor: 'rgba(255,255,255,0.7)', boxShadow: '0 8px 48px 0 rgba(255,255,255,0.08)' }}
           >
-            {/* Floating service circles */}
-            <div className="absolute inset-0 w-full h-full pointer-events-none">
-              {/* Centered text inside the container */}
+            
+            <div className="absolute inset-0 w-full h-full pointer-events-none hidden sm:block">
+              
               <div className="absolute w-full flex items-center justify-center top-1/2 left-1/2" style={{ transform: 'translate(-50%, -50%)', zIndex: 10, pointerEvents: 'auto' }}>
                 <span className="flex flex-col items-center text-lg md:text-2xl font-bold text-white text-center  px-6 py-2 rounded-xl shadow-lg tracking-widest">
                   <span>PROJECT TYPES I</span>
                   <span className="mt-1">SPECIALIZE IN</span>
                 </span>
               </div>
-              {/* Arrange circles in a responsive grid, not overlapping */}
-              {/* Randomly placed, non-overlapping circles */}
               {(() => {
                 // List of service names
                 const serviceNames = [
@@ -524,7 +574,7 @@ export default function HomePage() {
                   "Product Design",
                   "Consulting"
                 ];
-                // Predefined random positions for 11 circles (percentages for top/left)
+                
                 const positions = [
                   { top: '18%', left: '8%' }, // Service 1 moved down
                   { top: '32%', left: '22%' }, // Service 2 moved down
@@ -563,6 +613,37 @@ export default function HomePage() {
                   </div>
                 ));
               })()}
+            </div>
+            {/* Responsive grid for xs/sm devices */}
+            <div className="w-full flex flex-col items-center justify-center gap-4 sm:hidden">
+              <div className="flex flex-col items-center mb-4">
+                <span className="flex flex-col items-center text-base font-bold text-white text-center px-4 py-2 rounded-xl shadow-lg tracking-widest">
+                  <span>PROJECT TYPES I</span>
+                  <span className="mt-1">SPECIALIZE IN</span>
+                </span>
+              </div>
+              <div className="grid grid-cols-2 gap-3 w-full px-2">
+                {[
+                  "Web Development",
+                  "UI/UX Design",
+                  "Auth Systems",
+                  "Landing Page",
+                  "Blockchain DApps",
+                  "API Integrations",
+                  "Content Strategy",
+                  "AI Automation",
+                  "ECommerce",
+                  "Product Design",
+                  "Consulting"
+                ].map((service, i) => (
+                  <div
+                    key={i}
+                    className="bg-white bg-opacity-10 border border-white rounded-2xl flex items-center justify-center text-white text-xs font-semibold shadow-lg backdrop-blur-md transition-all duration-500 hover:bg-opacity-30 hover:scale-105 cursor-none text-center px-2 py-4 tracking-widest min-h-[60px]"
+                  >
+                    {service}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
           <div className="mb-24" />
@@ -729,5 +810,5 @@ export default function HomePage() {
           </div>
         </footer>
       </main>
-  );
-}
+    );
+  }
