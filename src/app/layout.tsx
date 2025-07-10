@@ -1,4 +1,4 @@
-import "../globals.css";
+import "./globals.css";
 import { Dangrek, Workbench } from "next/font/google";
 
 const dangrek = Dangrek({
