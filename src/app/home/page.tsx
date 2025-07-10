@@ -1,12 +1,12 @@
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
+import Link from "next/link";
+import Image from "next/image";
 import { motion } from 'framer-motion';
 import Particles from '../components/bg';
-import BlurText from "../components/BlurText";
 import Magnet from '../components/Magnet';
 import DecayCard from '../components/DecayCard';
-import DecryptedText from '../components/DecryptedText';
 import ScrambledText from '../components/ScrambledText';
 import { ExpandableCardDemo } from '../components/SkillsShow';
 import { Timeline } from '../components/Skills';
@@ -18,7 +18,7 @@ import { PlaceholdersAndVanishInput } from '../components/placeholder';
 export default function HomePage() {
   // Ref for mobile nav menu
   const navMenuRef = useRef<HTMLDivElement | null>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  
   const velocity = 100;
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
   const [cursorBlack, setCursorBlack] = useState(false);
@@ -46,42 +46,42 @@ export default function HomePage() {
             Built & Explored Events, Hackathons, Projects on blockchain globally and brought in sponsors like Harley , BMW etc., This year gave me a lot to learn and grow.
           </p>
           <div className="grid grid-cols-2 gap-4">
-            <img
+            <Image
               src="/sponsor.jpeg"
               alt="startup template"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
-            <img
+            <Image
               src="/monad.jpeg"
               alt="startup template"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
-            <img
-              src="iem3.jpeg"
+            <Image
+              src="/iem3.jpeg"
               alt="startup template"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
-            <img
+            <Image
               src="/monad2.png"
               alt="startup template"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
-            <img
+            <Image
               src="/semicolon.jpeg"
               alt="startup template"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
-            <img
+            <Image
               src="/algorand.png"
               alt="startup template"
               width={500}
@@ -100,32 +100,32 @@ export default function HomePage() {
             First Year of college. 
           </p>
           <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            I've been working freelance since two years and here are some of the projects I worked on.
+            I&apos;ve been working freelance since two years and here are some of the projects I worked on.
           </p>
           <div className="grid grid-cols-2 gap-4">
-            <img
-              src="canop.png"
+            <Image
+              src="/canop.png"
               alt="eventabc"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
-            <img
-              src="iem2.jpeg"
+            <Image
+              src="/iem2.jpeg"
               alt="monad_project"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
-            <img
-              src="blocktix.png"
+            <Image
+              src="/blocktix.png"
               alt="bento template"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
-            <img
-              src="fitmonk.png"
+            <Image
+              src="/fitmonk.png"
               alt="coredao"
               width={500}
               height={500}
@@ -140,7 +140,7 @@ export default function HomePage() {
       content: (
         <div>
           <p className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            4 coding tips i'd kill to tell my 17 y/o self :  
+            4 coding tips i&apos;d kill to tell my 17 y/o self :  
           </p>
           <div className="mb-8">
             <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
@@ -157,29 +157,29 @@ export default function HomePage() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <img
-              src="port.png"
+            <Image
+              src="/port.png"
               alt="hero template"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
-            <img
-              src="random.png"
+            <Image
+              src="/random.png"
               alt="feature template"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
-            <img
-              src="image.png"
+            <Image
+              src="/image.png"
               alt="bento template"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
-            <img
-              src="random2.png"
+            <Image
+                src="/random2.png"
               alt="cards template"
               width={500}
               height={500}
@@ -190,18 +190,6 @@ export default function HomePage() {
       ),
     },
   ];
-  
-  useEffect(() => {
-    const handleScroll = () => {
-      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-      const currentProgress = (window.scrollY / totalScroll) * 100;
-      setScrollProgress(currentProgress);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   // Close mobile nav on outside click
   useEffect(() => {
     if (!showNav) return;
@@ -240,18 +228,19 @@ export default function HomePage() {
   return (
     <main className="min-h-screen w-full bg-black text-white relative overflow-x-hidden cursor-none px-3 sm:px-0" style={{ cursor: 'none' }}>
       
-      <div style={{ position: 'fixed', inset: 0, width: '100vw', height: '100vh', zIndex: 0, pointerEvents: 'none' }}>
-        <Particles
-          particleColors={['#ffffff', '#ffffff']}
-          particleCount={200}
-          particleSpread={10}
-          speed={0.1}
-          particleBaseSize={100}
-          moveParticlesOnHover={true}
-          alphaParticles={false}
-          disableRotation={false}
-        />
-      </div>
+      <div className="fixed inset-0 w-screen h-screen z-0 pointer-events-none">
+      <Particles
+        particleColors={['#ffffff', '#ffffff']}
+        particleCount={200}
+        particleSpread={10}
+        speed={0.1}
+        particleBaseSize={100}
+        moveParticlesOnHover={true}
+        alphaParticles={false}
+        disableRotation={false}
+        className="absolute inset-0 w-full h-full"
+      />
+    </div>
       <div
         style={{
           position: 'fixed',
@@ -375,33 +364,33 @@ export default function HomePage() {
               </ScrambledText>
               
               <div className="hidden md:flex flex-row gap-6 mt-8 justify-start md:pl-12">
-                <a href="https://github.com/0day-Ashish" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:scale-110 transition-transform">
+                <Link href="https://github.com/0day-Ashish" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:scale-110 transition-transform">
                   {/* GitHub SVG */}
                   <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-green-400">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.339-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.987 1.029-2.687-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.594 1.028 2.687 0 3.847-2.338 4.695-4.566 4.944.36.31.68.921.68 1.857 0 1.34-.012 2.422-.012 2.753 0 .268.18.579.688.481C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2z" />
                   </svg>
-                </a>
-                <a href="https://www.linkedin.com/in/ashish-ranjan-das%E2%86%97-530512198/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:scale-110 transition-transform">
+                </Link>
+                <Link href="https://www.linkedin.com/in/ashish-ranjan-das%E2%86%97-530512198/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:scale-110 transition-transform">
                   {/* LinkedIn SVG */}
                   <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-blue-400">
                     <rect x="2" y="2" width="20" height="20" rx="5" strokeWidth="2"/>
                     <path strokeWidth="2" d="M7 10v7M7 7v.01M12 10v7m0-7c0-1.105.895-2 2-2s2 .895 2 2v7"/>
                   </svg>
-                </a>
-                <a href="https://www.instagram.com/ashishh_rd_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:scale-110 transition-transform">
+                </Link>
+                <Link href="https://www.instagram.com/ashishh_rd_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:scale-110 transition-transform">
                   {/* Instagram SVG */}
                   <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-pink-400">
                     <rect width="20" height="20" x="2" y="2" rx="5" strokeWidth="2"/>
                     <circle cx="12" cy="12" r="5" strokeWidth="2"/>
                     <circle cx="17" cy="7" r="1.5" fill="currentColor"/>
                   </svg>
-                </a>
-                <a href="https://x.com/Ashishrd06" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:scale-110 transition-transform">
+                </Link>
+                <Link href="https://x.com/Ashishrd06" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:scale-110 transition-transform">
                   {/* Twitter SVG */}
                   <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-blue-300">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M22 5.924c-.793.352-1.645.59-2.54.698a4.48 4.48 0 001.965-2.475 8.94 8.94 0 01-2.828 1.082A4.48 4.48 0 0012.07 4c-2.485 0-4.5 2.015-4.5 4.5 0 .353.04.697.116 1.027C5.09 9.37 3.13 8.29 1.671 6.684c-.387.664-.61 1.437-.61 2.26 0 1.56.794 2.936 2.003 3.744-.737-.023-1.43-.226-2.037-.563v.057c0 2.18 1.55 4.002 3.604 4.418-.377.103-.775.158-1.186.158-.29 0-.57-.028-.844-.08.57 1.78 2.223 3.078 4.183 3.113A8.98 8.98 0 012 19.54a12.68 12.68 0 006.88 2.017c8.253 0 12.77-6.835 12.77-12.77 0-.195-.004-.39-.013-.583A9.14 9.14 0 0024 4.59a8.98 8.98 0 01-2.6.713z" />
                 </svg>
-                </a>
+                </Link>
               </div>
               {/* Add gap below social icons */}
               <div className="hidden md:block mb-8" />
@@ -413,33 +402,33 @@ export default function HomePage() {
             <DecayCard width={320} height={400} image="/me.png" />
             {/* Social Links below the image on mobile only */}
             <div className="flex flex-row gap-6 mt-6 justify-center md:hidden">
-              <a href="https://github.com/0day-Ashish" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:scale-110 transition-transform">
+              <Link href="https://github.com/0day-Ashish" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:scale-110 transition-transform">
                 {/* GitHub SVG */}
                 <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-green-400">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.339-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.987 1.029-2.687-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.594 1.028 2.687 0 3.847-2.338 4.695-4.566 4.944.36.31.68.921.68 1.857 0 1.34-.012 2.422-.012 2.753 0 .268.18.579.688.481C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2z" />
                 </svg>
-              </a>
-              <a href="https://www.linkedin.com/in/ashish-ranjan-das%E2%86%97-530512198/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:scale-110 transition-transform">
+              </Link>
+              <Link href="https://www.linkedin.com/in/ashish-ranjan-das%E2%86%97-530512198/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:scale-110 transition-transform">
                 {/* LinkedIn SVG */}
                 <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-blue-400">
                   <rect x="2" y="2" width="20" height="20" rx="5" strokeWidth="2"/>
                   <path strokeWidth="2" d="M7 10v7M7 7v.01M12 10v7m0-7c0-1.105.895-2 2-2s2 .895 2 2v7"/>
                 </svg>
-              </a>
-              <a href="https://www.instagram.com/ashishh_rd_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:scale-110 transition-transform">
+              </Link>
+              <Link href="https://www.instagram.com/ashishh_rd_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:scale-110 transition-transform">
                 {/* Instagram SVG */}
                 <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-pink-400">
                   <rect width="20" height="20" x="2" y="2" rx="5" strokeWidth="2"/>
                   <circle cx="12" cy="12" r="5" strokeWidth="2"/>
                   <circle cx="17" cy="7" r="1.5" fill="currentColor"/>
                 </svg>
-              </a>
-              <a href="https://x.com/Ashishrd06" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:scale-110 transition-transform">
+              </Link>
+              <Link href="https://x.com/Ashishrd06" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:scale-110 transition-transform">
                 {/* Twitter SVG */}
                 <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-blue-300">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M22 5.924c-.793.352-1.645.59-2.54.698a4.48 4.48 0 001.965-2.475 8.94 8.94 0 01-2.828 1.082A4.48 4.48 0 0012.07 4c-2.485 0-4.5 2.015-4.5 4.5 0 .353.04.697.116 1.027C5.09 9.37 3.13 8.29 1.671 6.684c-.387.664-.61 1.437-.61 2.26 0 1.56.794 2.936 2.003 3.744-.737-.023-1.43-.226-2.037-.563v.057c0 2.18 1.55 4.002 3.604 4.418-.377.103-.775.158-1.186.158-.29 0-.57-.028-.844-.08.57 1.78 2.223 3.078 4.183 3.113A8.98 8.98 0 012 19.54a12.68 12.68 0 006.88 2.017c8.253 0 12.77-6.835 12.77-12.77 0-.195-.004-.39-.013-.583A9.14 9.14 0 0024 4.59a8.98 8.98 0 01-2.6.713z" />
                 </svg>
-              </a>
+              </Link>
             </div>
             {/* Add gap below social icons on mobile only */}
             <div className="mb-8 md:hidden" />
@@ -477,39 +466,50 @@ export default function HomePage() {
     className="custom-class text-3xl sm:text-4xl md:text-4xl font-bold whitespace-nowrap tracking-widest"
   />
 
-  <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" aria-label="React">
-    <img src="/react.svg" alt="React" className="w-8 h-8 sm:w-10 sm:h-10 md:w-10 md:h-10 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
-  </a>
-  <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer" aria-label="Node.js">
-    <img src="/nodejs.svg" alt="Node.js" className="w-9 h-9 sm:w-12 sm:h-12 md:w-12 md:h-12 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
-  </a>
-  <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer" aria-label="TypeScript">
-    <img src="/ts.svg" alt="TypeScript" className="w-8 h-8 sm:w-10 sm:h-10 md:w-10 md:h-10 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
-  </a>
-  <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" aria-label="Tailwind CSS">
-    <img src="/css.svg" alt="Tailwind CSS" className="w-8 h-8 sm:w-10 sm:h-10 md:w-10 md:h-10 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
-  </a>
-  <a href="https://docs.soliditylang.org/" target="_blank" rel="noopener noreferrer" aria-label="Solidity">
-    <img src="/sol.svg" alt="Solidity" className="w-8 h-8 sm:w-10 sm:h-10 md:w-10 md:h-10 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
-  </a>
-  <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" aria-label="Python">
-    <img src="/py.svg" alt="Python" className="w-9 h-9 sm:w-12 sm:h-12 md:w-12 md:h-12 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
-  </a>
-  <a href="https://en.wikipedia.org/wiki/Terminal_emulator" target="_blank" rel="noopener noreferrer" aria-label="Terminal">
-    <img src="/terminal.svg" alt="Terminal" className="w-9 h-9 sm:w-12 sm:h-12 md:w-12 md:h-12 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
-  </a>
-  <a href="https://developer.mozilla.org/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" aria-label="JavaScript">
-    <img src="/js.svg" alt="JavaScript" className="w-9 h-9 sm:w-12 sm:h-12 md:w-12 md:h-12 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
-  </a>
-  <a href="https://en.wikipedia.org/wiki/Database" target="_blank" rel="noopener noreferrer" aria-label="Database">
-    <img src="/database.svg" alt="Database" className="w-9 h-9 sm:w-12 sm:h-12 md:w-12 md:h-12 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
-  </a>
-  <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" aria-label="Figma">
-    <img src="/figma.svg" alt="Figma" className="w-9 h-9 sm:w-12 sm:h-12 md:w-12 md:h-12 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
-  </a>
-  <a href="https://isocpp.org/" target="_blank" rel="noopener noreferrer" aria-label="C++">
-    <img src="/c.svg" alt="C++" className="w-9 h-9 sm:w-12 sm:h-12 md:w-12 md:h-12 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
-  </a>
+  <Link href="https://react.dev/" target="_blank" rel="noopener noreferrer" aria-label="React">
+    <Image src="/react.svg" width={40} // or 32, 48 — match your design
+  height={40} alt="React" className="w-8 h-8 sm:w-10 sm:h-10 md:w-10 md:h-10 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
+  </Link>
+  <Link href="https://nodejs.org/" target="_blank" rel="noopener noreferrer" aria-label="Node.js">
+    <Image src="/nodejs.svg" alt="Node.js" width={40} // or 32, 48 — match your design
+  height={40} className="w-9 h-9 sm:w-12 sm:h-12 md:w-12 md:h-12 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
+  </Link>
+  <Link href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer" aria-label="TypeScript">
+    <Image src="/ts.svg" alt="TypeScript" width={40} // or 32, 48 — match your design
+  height={40} className="w-8 h-8 sm:w-10 sm:h-10 md:w-10 md:h-10 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
+  </Link>
+  <Link href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" aria-label="Tailwind CSS">
+    <Image src="/css.svg" alt="Tailwind CSS" width={40} // or 32, 48 — match your design
+  height={40} className="w-8 h-8 sm:w-10 sm:h-10 md:w-10 md:h-10 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
+  </Link>    
+  <Link href="https://docs.soliditylang.org/" target="_blank" rel="noopener noreferrer" aria-label="Solidity">
+    <Image src="/sol.svg" alt="Solidity" width={40} // or 32, 48 — match your design
+  height={40} className="w-8 h-8 sm:w-10 sm:h-10 md:w-10 md:h-10 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
+  </Link>
+  <Link href="https://www.python.org/" target="_blank" rel="noopener noreferrer" aria-label="Python">
+    <Image src="/py.svg" alt="Python" width={40} // or 32, 48 — match your design
+  height={40} className="w-9 h-9 sm:w-12 sm:h-12 md:w-12 md:h-12 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
+  </Link>
+  <Link href="https://en.wikipedia.org/wiki/Terminal_emulator" target="_blank" rel="noopener noreferrer" aria-label="Terminal">
+    <Image src="/terminal.svg" alt="Terminal" width={40} // or 32, 48 — match your design
+  height={40} className="w-9 h-9 sm:w-12 sm:h-12 md:w-12 md:h-12 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
+  </Link>
+  <Link href="https://developer.mozilla.org/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" aria-label="JavaScript">
+    <Image src="/js.svg" alt="JavaScript" width={40} // or 32, 48 — match your design
+  height={40} className="w-9 h-9 sm:w-12 sm:h-12 md:w-12 md:h-12 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
+  </Link>
+  <Link href="https://en.wikipedia.org/wiki/Database" target="_blank" rel="noopener noreferrer" aria-label="Database">
+    <Image src="/database.svg" alt="Database" width={40} // or 32, 48 — match your design
+  height={40} className="w-9 h-9 sm:w-12 sm:h-12 md:w-12 md:h-12 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
+  </Link>
+  <Link href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" aria-label="Figma">
+    <Image src="/figma.svg" alt="Figma" width={40} // or 32, 48 — match your design
+  height={40} className="w-9 h-9 sm:w-12 sm:h-12 md:w-12 md:h-12 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
+  </Link>
+  <Link href="https://isocpp.org/" target="_blank" rel="noopener noreferrer" aria-label="C++">
+    <Image src="/c.svg" alt="C++" width={40} // or 32, 48 — match your design
+  height={40} className="w-9 h-9 sm:w-12 sm:h-12 md:w-12 md:h-12 object-contain hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-none" />
+  </Link>
 </div>
           </div>
         </section>
@@ -672,13 +672,13 @@ export default function HomePage() {
           className="fixed top-5 left-0 w-full p-6 z-50"
         >
           <div className="relative max-w-7xl mx-auto flex items-center justify-center">
-            <a
+            <Link
               href="/"
               className="absolute left-0 text-5xl md:text-1xl font-bold text-left cursor-none"
               style={{cursor: 'none'}} 
             >
               ard.
-            </a>
+            </Link>
             {/* Hamburger for small screens - right aligned */}
             <div className="absolute right-0 flex items-center md:hidden">
               <button
@@ -694,7 +694,7 @@ export default function HomePage() {
             </div>
             {/* Nav links for desktop */}
             <div className="hidden md:flex gap-8 justify-center items-center">
-              <a
+              <Link
                 href="#projects"
                 className="relative px-4 py-1 text-s cursor-none group rounded-full overflow-hidden"
                 style={{ cursor: 'none', display: 'inline-block' }}
@@ -705,8 +705,8 @@ export default function HomePage() {
                   aria-hidden="true"
                 />
                 <span className="relative z-10 transition-colors duration-300 group-hover:text-black tracking-widest">काम</span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#about"
                 className="relative px-4 py-1 text-s cursor-none group rounded-full overflow-hidden"
                 style={{ cursor: 'none', display: 'inline-block' }}
@@ -717,11 +717,11 @@ export default function HomePage() {
                   aria-hidden="true"
                 />
                 <span className="relative z-10 transition-colors duration-300 group-hover:text-black tracking-widest">helo_</span>
-              </a>
+              </Link>
             </div>
             {/* Desktop: right button hidden on mobile */}
             <div className="absolute right-0 items-center hidden md:flex">
-              <a
+              <Link
                 href='/contact'
                 className="relative overflow-hidden px-4 py-2 rounded-full border border-gray-400 text-xs font-semibold cursor-none group"
                 style={{borderRadius: '9999px', cursor: 'none'}} 
@@ -736,7 +736,7 @@ export default function HomePage() {
                 <span className="relative z-10 transition-colors duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:text-black" style={{ display: 'inline-block' }}>
                   AVAILABLE FOR FREELANCE
                 </span>
-              </a>
+                </Link>
             </div>
             {/* Mobile nav links dropdown */}
             {showNav && (
@@ -744,7 +744,7 @@ export default function HomePage() {
                 ref={navMenuRef}
                 className="absolute top-16 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-95 rounded-xl shadow-lg flex flex-col items-center gap-4 py-6 px-8 md:hidden z-50 border border-gray-700"
               >
-                <a
+                <Link
                   href="#projects"
                   className="relative px-4 py-2 text-base cursor-none group rounded-full overflow-hidden w-full text-center"
                   style={{ cursor: 'none', display: 'inline-block' }}
@@ -752,8 +752,8 @@ export default function HomePage() {
                 >
                   <span className="absolute left-0 bottom-0 w-full h-full bg-white border-2 border-white-400 rounded-full z-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-y-0 translate-y-full" style={{ borderRadius: '9999px' }} aria-hidden="true" />
                   <span className="relative z-10 transition-colors duration-300 group-hover:text-black tracking-widest">काम</span>
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#about"
                   className="relative px-4 py-2 text-base cursor-none group rounded-full overflow-hidden w-full text-center"
                   style={{ cursor: 'none', display: 'inline-block' }}
@@ -761,8 +761,8 @@ export default function HomePage() {
                 >
                   <span className="absolute left-0 bottom-0 w-full h-full bg-white border-2 border-white-400 rounded-full z-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-y-0 translate-y-full" style={{ borderRadius: '9999px' }} aria-hidden="true" />
                   <span className="relative z-10 transition-colors duration-300 group-hover:text-black tracking-widest">helo_</span>
-                </a>
-                <a
+                </Link>
+                <Link
                   href='/contact'
                   className="relative overflow-hidden px-4 py-2 rounded-full border border-gray-400 text-xs font-semibold cursor-none group w-full text-center"
                   style={{borderRadius: '9999px', cursor: 'none'}} 
@@ -774,7 +774,7 @@ export default function HomePage() {
                   <span className="relative z-10 transition-colors duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:text-black" style={{ display: 'inline-block' }}>
                     AVAILABLE FOR FREELANCE
                   </span>
-                </a>
+                </Link>
               </div>
             )}
           </div>
@@ -784,29 +784,29 @@ export default function HomePage() {
             <span className="mb-1">&copy; {new Date().getFullYear()} Ashish Ranjan Das. All rights reserved.</span>
             <span className="text-[0.7rem]">Made with <span className="text-green-400">Next.js</span> & <span className="text-green-400">Tailwind CSS</span></span>
             <div className="flex flex-row gap-6 mt-4 justify-center">
-              <a href="https://github.com/0day-Ashish" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:scale-110 transition-transform">
+              <Link href="https://github.com/0day-Ashish" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:scale-110 transition-transform">
                 <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-green-400">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.339-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.987 1.029-2.687-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.594 1.028 2.687 0 3.847-2.338 4.695-4.566 4.944.36.31.68.921.68 1.857 0 1.34-.012 2.422-.012 2.753 0 .268.18.579.688.481C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2z" />
                 </svg>
-              </a>
-              <a href="https://www.linkedin.com/in/ashish-ranjan-das%E2%86%97-530512198/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:scale-110 transition-transform">
+              </Link>
+              <Link href="https://www.linkedin.com/in/ashish-ranjan-das%E2%86%97-530512198/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:scale-110 transition-transform">
                 <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-blue-400">
                   <rect x="2" y="2" width="20" height="20" rx="5" strokeWidth="2"/>
                   <path strokeWidth="2" d="M7 10v7M7 7v.01M12 10v7m0-7c0-1.105.895-2 2-2s2 .895 2 2v7"/>
                 </svg>
-              </a>
-              <a href="https://www.instagram.com/ashishh_rd_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:scale-110 transition-transform">
+              </Link>
+              <Link href="https://www.instagram.com/ashishh_rd_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:scale-110 transition-transform">
                 <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-pink-400">
                   <rect width="20" height="20" x="2" y="2" rx="5" strokeWidth="2"/>
                   <circle cx="12" cy="12" r="5" strokeWidth="2"/>
                   <circle cx="17" cy="7" r="1.5" fill="currentColor"/>
                 </svg>
-              </a>
-              <a href="https://x.com/Ashishrd06" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:scale-110 transition-transform">
+              </Link>
+              <Link href="https://x.com/Ashishrd06" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:scale-110 transition-transform">
                 <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white hover:text-blue-300">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M22 5.924c-.793.352-1.645.59-2.54.698a4.48 4.48 0 001.965-2.475 8.94 8.94 0 01-2.828 1.082A4.48 4.48 0 0012.07 4c-2.485 0-4.5 2.015-4.5 4.5 0 .353.04.697.116 1.027C5.09 9.37 3.13 8.29 1.671 6.684c-.387.664-.61 1.437-.61 2.26 0 1.56.794 2.936 2.003 3.744-.737-.023-1.43-.226-2.037-.563v.057c0 2.18 1.55 4.002 3.604 4.418-.377.103-.775.158-1.186.158-.29 0-.57-.028-.844-.08.57 1.78 2.223 3.078 4.183 3.113A8.98 8.98 0 012 19.54a12.68 12.68 0 006.88 2.017c8.253 0 12.77-6.835 12.77-12.77 0-.195-.004-.39-.013-.583A9.14 9.14 0 0024 4.59a8.98 8.98 0 01-2.6.713z" />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </footer>

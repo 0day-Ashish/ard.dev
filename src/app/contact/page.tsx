@@ -35,7 +35,7 @@ export default function ContactPage() {
         const data = await res.json();
         setError(data.error || "Something went wrong. Please try again.");
       }
-    } catch (err) {
+    } catch {
       setError("Failed to send. Check your internet or try again later.");
     } finally {
       setLoading(false);
@@ -93,7 +93,7 @@ export default function ContactPage() {
 
         {submitted && (
           <p className="mt-6 text-green-400 text-center">
-            ✅ Thank you for reaching out! I'll get back to you soon.
+            ✅ Thank you for reaching out! I&apos;ll get back to you soon.
           </p>
         )}
 

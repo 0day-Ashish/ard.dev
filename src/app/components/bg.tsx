@@ -210,6 +210,8 @@ const Particles: React.FC<ParticlesProps> = ({
       renderer.render({ scene: particles, camera });
     };
 
+    animationFrameId = requestAnimationFrame(update);
+
     return () => {
       window.removeEventListener("resize", resize);
       if (moveParticlesOnHover) {

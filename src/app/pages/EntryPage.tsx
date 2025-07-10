@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import LetterGlitch from '../components/LetterGlitch';
 import { Dangrek } from 'next/font/google';

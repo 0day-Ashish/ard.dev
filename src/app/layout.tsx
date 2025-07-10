@@ -1,4 +1,19 @@
 import "./globals.css";
+import { Dangrek, Workbench } from "next/font/google";
+
+const dangrek = Dangrek({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-dangrek",
+  display: "swap",
+});
+
+const workbench = Workbench({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-workbench",
+  display: "swap",
+});
 
 export const metadata = {
   title: "ard.dev",
@@ -17,13 +32,8 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="overflow-x-hidden">
-      <head>
-      <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" />
-<link href="https://fonts.googleapis.com/css2?family=Dangrek&family=Workbench&display=swap" rel="stylesheet"/>
-      </head>
-      <body className="antialiased min-h-screen bg-black text-white overflow-x-hidden">
+    <html lang="en" className={`${dangrek.variable} ${workbench.variable} overflow-x-hidden`}>
+      <body className="antialiased min-h-screen bg-black text-white overflow-x-hidden font-sans">
         {children}
       </body>
     </html>
