@@ -409,7 +409,8 @@ export default function HomePage() {
           </div>
           {/* Image section */}
           <div className="w-full md:w-1/2 flex flex-col items-center md:items-end justify-center pr-0 md:pr-16 mt-8 md:mt-0">
-            <DecayCard width={320} height={400} image="/me.png" className="hidden md:block" />
+            {/* Remove className prop from DecayCard */}
+            <DecayCard width={320} height={400} image="/me.png" />
             {/* Social Links below the image on mobile only */}
             <div className="flex flex-row gap-6 mt-6 justify-center md:hidden">
               <a href="https://github.com/0day-Ashish" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:scale-110 transition-transform">
