@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Particles from '../components/bg';
@@ -18,7 +18,8 @@ import { PlaceholdersAndVanishInput } from '../components/placeholder';
 export default function HomePage() {
 
   const navMenuRef = useRef<HTMLDivElement | null>(null);
- 
+  const { scrollY } = useScroll();
+  const opacity = useTransform(scrollY, [0, 100], [1, 0.85]);
   const velocity = 100;
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
   const [cursorBlack, setCursorBlack] = useState(false);
@@ -655,119 +656,111 @@ export default function HomePage() {
         </section>
         {/* Navigation */}
         <motion.nav
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="fixed top-5 left-0 w-full p-6 z-50"
+  style={{ opacity }}
+  className="fixed top-5 left-1/2 transform -translate-x-1/2 w-full max-w-[90%] sm:max-w-xl md:max-w-6xl px-4 sm:px-6 py-4 z-50 backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20 rounded-xl shadow-lg transition-all duration-500"
+>
+  <div className="relative w-full mx-auto flex items-center justify-center px-2 sm:px-4">
+        {/* Logo */}
+        <Link
+          href="/"
+          className="absolute left-0 text-3xl font-bold tracking-tight text-white cursor-none"
+          style={{ cursor: "none" }}
         >
-          <div className="relative max-w-7xl mx-auto flex items-center justify-center">
+          ard.
+        </Link>
+
+        {/* Hamburger Menu (Mobile) */}
+        <div className="absolute right-0 flex items-center md:hidden">
+          <button
+            className="flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
+            onClick={() => setShowNav(!showNav)}
+            aria-label="Open navigation menu"
+            type="button"
+          >
+            <span className="block w-7 h-0.5 bg-white mb-1 rounded transition-all" />
+            <span className="block w-7 h-0.5 bg-white mb-1 rounded transition-all" />
+            <span className="block w-7 h-0.5 bg-white rounded transition-all" />
+          </button>
+        </div>
+
+        {/* Desktop Nav Links */}
+        <div className="hidden md:flex gap-8 justify-center items-center">
+          {["projects", "about"].map((section) => (
             <Link
-              href="/"
-              className="absolute left-0 text-5xl md:text-1xl font-bold text-left cursor-none"
-              style={{cursor: 'none'}} 
+              key={section}
+              href={`#${section}`}
+              className="relative px-4 py-1 text-s cursor-none group rounded-full overflow-hidden"
+              style={{ cursor: "none" }}
             >
-              ard.
+              <span
+                className="absolute left-0 bottom-0 w-full h-full bg-white border border-white rounded-full z-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] translate-y-full group-hover:translate-y-0"
+                aria-hidden="true"
+              />
+              <span className="relative z-10 transition-colors duration-300 group-hover:text-black tracking-widest lowercase">
+                {section === "projects" ? "काम" : "helo_"}
+              </span>
             </Link>
-            {/* Hamburger for small screens - right aligned */}
-            <div className="absolute right-0 flex items-center md:hidden">
-              <button
-                className="flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
-                onClick={() => setShowNav(!showNav)}
-                aria-label="Open navigation menu"
-                type="button"
-              >
-                <span className="block w-7 h-0.5 bg-white mb-1 rounded transition-all" />
-                <span className="block w-7 h-0.5 bg-white mb-1 rounded transition-all" />
-                <span className="block w-7 h-0.5 bg-white rounded transition-all" />
-              </button>
-            </div>
-            {/* Nav links for desktop */}
-            <div className="hidden md:flex gap-8 justify-center items-center">
+          ))}
+        </div>
+
+        {/* Contact Button (Desktop) */}
+        <div className="absolute right-0 items-center hidden md:flex">
+          <Link
+            href="/contact"
+            className="relative overflow-hidden px-4 py-2 rounded-full border border-gray-400 text-xs font-semibold cursor-none group "
+            style={{ cursor: "none" }}
+            onMouseEnter={() => setCursorBlack(true)}
+            onMouseLeave={() => setCursorBlack(false)}
+          >
+            <span
+              className="absolute left-0 bottom-0 w-full h-full bg-white z-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] translate-y-full group-hover:translate-y-0"
+              aria-hidden="true"
+            />
+            <span className="relative z-10 transition-colors duration-500 group-hover:text-black">
+              AVAILABLE FOR FREELANCE
+            </span>
+          </Link>
+        </div>
+
+        {/* Mobile Dropdown Menu */}
+        {showNav && (
+          <div
+          ref={navMenuRef}
+          className="absolute top-16 left-1/2 transform -translate-x-1/2 w-[90vw] max-w-sm 
+                     bg-black/50 backdrop-blur-md rounded-xl shadow-lg flex flex-col items-center 
+                     gap-4 py-6 px-6 md:hidden z-50 border border-gray-700"
+        >
+            {["projects", "about"].map((section) => (
               <Link
-                href="#projects"
-                className="relative px-4 py-1 text-s cursor-none group rounded-full overflow-hidden"
-                style={{ cursor: 'none', display: 'inline-block' }}
+                key={section}
+                href={`#${section}`}
+                className="relative px-4 py-2 text-base cursor-none group rounded-full overflow-hidden w-full text-center"
+                style={{ cursor: "none" }}
+                onClick={() => setShowNav(false)}
               >
-                <span
-                  className="absolute left-0 bottom-0 w-full h-full bg-white border-2 border-white-400 rounded-full z-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-y-0 translate-y-full"
-                  style={{ borderRadius: '9999px' }}
-                  aria-hidden="true"
-                />
-                <span className="relative z-10 transition-colors duration-300 group-hover:text-black tracking-widest">काम</span>
-              </Link>
-              <Link
-                href="#about"
-                className="relative px-4 py-1 text-s cursor-none group rounded-full overflow-hidden"
-                style={{ cursor: 'none', display: 'inline-block' }}
-              >
-                <span
-                  className="absolute left-0 bottom-0 w-full h-full bg-white border-2 border-white-400 rounded-full z-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-y-0 translate-y-full"
-                  style={{ borderRadius: '9999px' }}
-                  aria-hidden="true"
-                />
-                <span className="relative z-10 transition-colors duration-300 group-hover:text-black tracking-widest">helo_</span>
-              </Link>
-            </div>
-            {/* Desktop: right button hidden on mobile */}
-            <div className="absolute right-0 items-center hidden md:flex">
-              <Link
-                href='/contact'
-                className="relative overflow-hidden px-4 py-2 rounded-full border border-gray-400 text-xs font-semibold cursor-none group"
-                style={{borderRadius: '9999px', cursor: 'none'}} 
-                onMouseEnter={() => setCursorBlack(true)}
-                onMouseLeave={() => setCursorBlack(false)}
-              >
-                <span
-                  className="absolute left-0 bottom-0 w-full h-full bg-white z-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-y-0 translate-y-full"
-                  style={{ borderRadius: '9999px' }}
-                  aria-hidden="true"
-                />
-                <span className="relative z-10 transition-colors duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:text-black" style={{ display: 'inline-block' }}>
-                  AVAILABLE FOR FREELANCE
+                <span className="absolute left-0 bottom-0 w-full h-full bg-white border border-white rounded-full z-0 transition-transform duration-500 group-hover:translate-y-0 translate-y-full" />
+                <span className="relative z-10 group-hover:text-black tracking-widest lowercase">
+                  {section === "projects" ? "काम" : "helo_"}
                 </span>
               </Link>
-            </div>
-            {/* Mobile nav links dropdown */}
-            {showNav && (
-              <div
-                ref={navMenuRef}
-                className="absolute top-16 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-95 rounded-xl shadow-lg flex flex-col items-center gap-4 py-6 px-8 md:hidden z-50 border border-gray-700"
-              >
-                <Link
-                  href="#projects"
-                  className="relative px-4 py-2 text-base cursor-none group rounded-full overflow-hidden w-full text-center"
-                  style={{ cursor: 'none', display: 'inline-block' }}
-                  onClick={() => setShowNav(false)}
-                >
-                  <span className="absolute left-0 bottom-0 w-full h-full bg-white border-2 border-white-400 rounded-full z-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-y-0 translate-y-full" style={{ borderRadius: '9999px' }} aria-hidden="true" />
-                  <span className="relative z-10 transition-colors duration-300 group-hover:text-black tracking-widest">काम</span>
-                </Link>
-                <Link
-                  href="#about"
-                  className="relative px-4 py-2 text-base cursor-none group rounded-full overflow-hidden w-full text-center"
-                  style={{ cursor: 'none', display: 'inline-block' }}
-                  onClick={() => setShowNav(false)}
-                >
-                  <span className="absolute left-0 bottom-0 w-full h-full bg-white border-2 border-white-400 rounded-full z-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-y-0 translate-y-full" style={{ borderRadius: '9999px' }} aria-hidden="true" />
-                  <span className="relative z-10 transition-colors duration-300 group-hover:text-black tracking-widest">helo_</span>
-                </Link>
-                <Link
-                  href='/contact'
-                  className="relative overflow-hidden px-4 py-2 rounded-full border border-gray-400 text-xs font-semibold cursor-none group w-full text-center"
-                  style={{borderRadius: '9999px', cursor: 'none'}} 
-                  onMouseEnter={() => setCursorBlack(true)}
-                  onMouseLeave={() => setCursorBlack(false)}
-                  onClick={() => setShowNav(false)}
-                >
-                  <span className="absolute left-0 bottom-0 w-full h-full bg-white z-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-y-0 translate-y-full" style={{ borderRadius: '9999px' }} aria-hidden="true" />
-                  <span className="relative z-10 transition-colors duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:text-black" style={{ display: 'inline-block' }}>
-                    AVAILABLE FOR FREELANCE
-                  </span>
-                </Link>
-              </div>
-            )}
+            ))}
+            <Link
+              href="/contact"
+              className="relative overflow-hidden px-4 py-2 rounded-full border border-gray-400 text-xs font-semibold cursor-none group w-full text-center"
+              style={{ cursor: "none" }}
+              onMouseEnter={() => setCursorBlack(true)}
+              onMouseLeave={() => setCursorBlack(false)}
+              onClick={() => setShowNav(false)}
+            >
+              <span className="absolute left-0 bottom-0 w-full h-full bg-white z-0 transition-transform duration-500 group-hover:translate-y-0 translate-y-full" />
+              <span className="relative z-10 group-hover:text-black">
+                AVAILABLE FOR FREELANCE
+              </span>
+            </Link>
           </div>
-        </motion.nav>
+        )}
+      </div>
+    </motion.nav>
         <footer className="w-full mt-12 py-6 text-white flex flex-col items-center justify-center text-xs opacity-80 rounded-b-3xl">
           <div className="max-w-2xl w-full flex flex-col items-center">
             <span className="mb-1">&copy; {new Date().getFullYear()} Ashish Ranjan Das. All rights reserved.</span>
