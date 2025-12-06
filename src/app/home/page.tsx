@@ -65,7 +65,7 @@ export default function HomePage() {
             <Image src="/canop.png" alt="eventabc" width={500} height={500} className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60" />
             <Image src="/iem2.jpeg" alt="monad_project" width={500} height={500} className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60" />
             <Image src="/blocktix.png" alt="bento template" width={500} height={500} className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60" />
-            <Image src="/fitmonk.png" alt="coredao" width={500} height={500} className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60" />
+            <Image src="/fitmonk-1.png" alt="coredao" width={500} height={500} className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60" />
           </div>
         </div>
       ),
@@ -312,8 +312,8 @@ export default function HomePage() {
           <div className="w-full flex items-center justify-center my-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 justify-center items-center" style={{ maxWidth: 1000 }}>
               <div className="flex justify-center">
-                <Link href="/projects/project-1" className="cursor-none" onMouseEnter={() => setCursorBlack(true)} onMouseLeave={() => setCursorBlack(false)} aria-label="Open Project 1">
-                  <TiltedCard imageSrc="/fitmonk.png" altText="Fitmonk-Web" captionText="Fitmonk-Web" containerHeight="270px" containerWidth="270px" imageHeight="250px" imageWidth="250px" rotateAmplitude={12} scaleOnHover={1.2} showMobileWarning={false} showTooltip={true} displayOverlayContent={true} />
+                <Link href="https://fitmonk-xi.vercel.app/" className="cursor-none" onMouseEnter={() => setCursorBlack(true)} onMouseLeave={() => setCursorBlack(false)} aria-label="Open Project 1">
+                  <TiltedCard imageSrc="/fitmonk-1.png" altText="Fitmonk-Web" captionText="Fitmonk-Web" containerHeight="270px" containerWidth="270px" imageHeight="250px" imageWidth="250px" rotateAmplitude={12} scaleOnHover={1.2} showMobileWarning={false} showTooltip={true} displayOverlayContent={true} />
                 </Link>
               </div>
 
@@ -329,8 +329,8 @@ export default function HomePage() {
                 </Link>
               </div>
               <div className="flex justify-center items-center">
-                <Link href="/projects/project-3" className="cursor-none" onMouseEnter={() => setCursorBlack(true)} onMouseLeave={() => setCursorBlack(false)} aria-label="Open Project 3">
-                  <TiltedCard imageSrc="/lilacstore.png" altText="Project 3" captionText="Lilacsolace - The only booth you need for storing memories" containerHeight="270px" containerWidth="270px" imageHeight="250px" imageWidth="250px" rotateAmplitude={12} scaleOnHover={1.2} showMobileWarning={false} showTooltip={true} displayOverlayContent={true} />
+                <Link href="https://lilacsolace-store.vercel.app/" className="cursor-none" onMouseEnter={() => setCursorBlack(true)} onMouseLeave={() => setCursorBlack(false)} aria-label="Open Project 3">
+                  <TiltedCard imageSrc="/lilacstore.png" altText="Project 3" captionText="Lilacsolace - The only booth you need for making picturized memories" containerHeight="270px" containerWidth="270px" imageHeight="250px" imageWidth="250px" rotateAmplitude={12} scaleOnHover={1.2} showMobileWarning={false} showTooltip={true} displayOverlayContent={true} />
                 </Link>
               </div>
              </div>
