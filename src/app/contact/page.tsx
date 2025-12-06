@@ -23,7 +23,7 @@ export default function ContactPage() {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("/contact/api/send-review", {
+      const res = await fetch("/api/send-review", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

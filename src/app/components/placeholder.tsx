@@ -161,10 +161,12 @@ export function PlaceholdersAndVanishInput({
     animate(maxX);
 
     try {
-      const res = await fetch("/home/api/send-review", {
+      const res = await fetch("/api/send-review", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          name: "anonymous",
+          email: "review@yourportfolio.dev",
           message: valueToSend,
         }),
       });
